@@ -1,3 +1,11 @@
+# Forked: wbosaka branch
+
+第33回WordBench大阪 「WordPress + LODで作るWebアプリケーションハッカソン」でフォーク。
+
+- endpointを`http://db.lodosaka.jp/sparql`へ変更。
+- queryで公衆トイレをフィルターするように変更。
+
+
 # Leaflet Simple SPARQL
 
 [leaflet-simple-csv] で、SPARQLエンドポイントを使えるようにしました。
