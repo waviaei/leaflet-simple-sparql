@@ -1,11 +1,14 @@
 var endpoint = "http://db.lodosaka.jp/sparql";
 var query = (function () {/*
-PREFIX geo: <http://www.w3.org/2003/01/geo/wgs84_pos#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-select * where {
-?uri rdfs:label ?title;
+PREFIX schema:<http://schema.org/>
+PREFIX geo:<http://www.w3.org/2003/01/geo/wgs84_pos#>
+PREFIX lodosaka:<http://lodosaka.hozo.jp/>
+SELECT DISTINCT * WHERE{
+?uri lodosaka:category_1 ?toilet;
+schema:name ?name;
 geo:lat ?lat;
 geo:long ?long.
+FILTER (regex(str(?toilet), "公衆トイレ"))
 }
 limit 1000
 */}).toString().match(/\n([\s\S]*)\n/)[1];
