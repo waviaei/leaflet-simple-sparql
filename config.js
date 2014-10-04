@@ -1,9 +1,11 @@
-var endpoint = "http://db.lodosaka.jp/sparql";
+var endpoint = "http://db.lodc.jp/sparql";
 var query = (function () {/*
 PREFIX schema:<http://schema.org/>
 PREFIX geo:<http://www.w3.org/2003/01/geo/wgs84_pos#>
 PREFIX lodosaka:<http://lodosaka.hozo.jp/>
-SELECT DISTINCT * WHERE{
+SELECT *
+FROM <http://lod.sfc.keio.ac.jp/challenge2013/show_status.php?id=d030>
+WHERE{
 ?uri lodosaka:category_1 ?toilet;
 schema:name ?name;
 geo:lat ?lat;
